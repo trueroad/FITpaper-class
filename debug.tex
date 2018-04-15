@@ -1,0 +1,276 @@
+% -*- coding: utf-8; mode: latex; -*-
+%
+% FIT2018 向け LuaLaTeX クラスファイル
+% https://github.com/trueroad/FITpaper-class
+%
+% デバッグ用ファイル
+%
+% Copyright (C) 2018 Masamichi Hosoda.
+% All rights reserved.
+% 
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+%
+% * Redistributions of source code must retain the above copyright notice,
+%   this list of conditions and the following disclaimer.
+%
+% * Redistributions in binary form must reproduce the above copyright notice,
+%   this list of conditions and the following disclaimer in the documentation
+%   and/or other materials provided with the distribution.
+%
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+% AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+% IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+% ARE DISCLAIMED.
+% IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+% FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+% DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+% OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+% HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+% LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+% SUCH DAMAGE.
+%
+
+\documentclass{FITpaper}
+
+\usepackage{layouts}
+
+% 和文タイトル
+\jtitle{FIT2018向けLua\LaTeX クラスファイルのデバッグ}
+
+% 欧文タイトル
+\etitle{Debugging Lua\LaTeX~Class File for FIT2018}
+
+% 著者数：著者の数だけ c を書く
+\authors{ccccc}
+
+% 和文著者名：著者名間に & を書く
+% 所属番号を \affmark でつける
+\jauthors{%
+  〇〇 〇〇\affmark{1} &
+  〇〇 〇〇\affmark{1} &
+  〇〇 〇\affmark{2} &
+  〇〇 〇\affmark{2} &
+  〇〇 〇\affmark{2}}
+
+% 欧文著者名：著者名間に & を書く
+\eauthors{%
+  Foo Bar Baz &
+  Foo Bar Baz &
+  Foo Bar Baz &
+  Foo Bar Baz &
+  Foo Bar Baz}
+
+% 所属名
+% \affmark でつけた所属番号毎に指定
+\afftext{1}{〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇.
+Foo bar baz boo bar baz Laboratories, Foo Corporation.}
+\afftext{2}{〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇.
+Foo bar baz boo bar baz Department, Foo University.}
+
+\begin{document}
+
+\maketitle
+
+\section{文字ズレ確認}
+
+□□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+□□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+□□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+□□□□□□□□
+
+本文の文字ズレ確認用。
+行間で左右の位置が一致していることを確認。
+特に最終行と他の行の間。
+
+\section{長さ}
+
+1 inch = 72.27 pt = 25.4 mm = 72 bp
+
+\subsection{フォント}
+
+\subsubsection{設定値}
+
+\textbackslash zh:
+\printinunitsof{pt}\prntlen{\zh},
+\printinunitsof{mm}\prntlen{\zh},
+\printinunitsof{bp}\prntlen{\zh}.
+
+\textbackslash zw:
+\printinunitsof{pt}\prntlen{\zw},
+\printinunitsof{mm}\prntlen{\zw},
+\printinunitsof{bp}\prntlen{\zw}.
+
+\textbackslash baselineskip:
+\printinunitsof{pt}\prntlen{\baselineskip},
+\printinunitsof{mm}\prntlen{\baselineskip},
+\printinunitsof{bp}\prntlen{\baselineskip}.
+
+\subsection{縦}
+
+\subsubsection{設定値}
+
+\textbackslash topmargin:
+\printinunitsof{pt}\prntlen{\topmargin},
+\printinunitsof{mm}\prntlen{\topmargin}.
+
+\textbackslash headheight:
+\printinunitsof{pt}\prntlen{\headheight},
+\printinunitsof{mm}\prntlen{\headheight},
+\printinunitsof{bp}\prntlen{\headheight}.
+
+\textbackslash headsep:
+\printinunitsof{pt}\prntlen{\headsep},
+\printinunitsof{mm}\prntlen{\headsep}.
+
+\textbackslash topskip:
+\printinunitsof{pt}\prntlen{\topskip},
+\printinunitsof{mm}\prntlen{\topskip},
+\printinunitsof{bp}\prntlen{\topskip}.
+
+\textbackslash textheight:
+\printinunitsof{pt}\prntlen{\textheight},
+\printinunitsof{mm}\prntlen{\textheight},
+\printinunitsof{bp}\prntlen{\textheight}.
+
+\textbackslash footskip:
+\printinunitsof{pt}\prntlen{\footskip},
+\printinunitsof{mm}\prntlen{\footskip}.
+
+\subsubsection{上}
+
+\newlength{\mytop}
+\setlength{\mytop}{\topmargin}
+
+\addtolength{\mytop}{1in}
+
+紙上端⇔ヘッダ上端:
+\printinunitsof{mm}\prntlen{\mytop}.
+
+\addtolength{\mytop}{\headheight}
+
+紙上端⇔ヘッダ下端:
+\printinunitsof{mm}\prntlen{\mytop}.
+
+\addtolength{\mytop}{\headsep}
+
+紙上端⇔ボディ上端:
+\printinunitsof{mm}\prntlen{\mytop}.
+←上マージン30 mm（目安）
+
+\subsubsection{上下間}
+
+ボディ高さ:
+\printinunitsof{mm}\prntlen{\textheight}.
+
+\subsubsection{下}
+
+\newlength{\mybottom}
+\setlength\mybottom{\paperheight}
+
+\addtolength{\mybottom}{-\mytop}
+\addtolength{\mybottom}{-\textheight}
+
+紙下端⇔ボディ下端:
+\printinunitsof{mm}\prntlen{\mybottom}.
+←下マージン25 mm（目安）
+
+\addtolength\mybottom{-\footskip}
+
+紙下端⇔フッタ下端:
+\printinunitsof{mm}\prntlen{\mybottom}.
+
+\subsection{横}
+
+\subsubsection{設定値}
+
+\textbackslash oddsidemargin:
+\printinunitsof{pt}\prntlen{\oddsidemargin},
+\printinunitsof{mm}\prntlen{\oddsidemargin}.
+
+\textbackslash textwidth:
+\printinunitsof{pt}\prntlen{\textwidth},
+\printinunitsof{mm}\prntlen{\textwidth},
+\printinunitsof{bp}\prntlen{\textwidth}.
+
+\textbackslash columnsep:
+\printinunitsof{pt}\prntlen{\columnsep},
+\printinunitsof{mm}\prntlen{\columnsep}.
+
+\textbackslash linewidth:
+\printinunitsof{pt}\prntlen{\linewidth},
+\printinunitsof{mm}\prntlen{\linewidth},
+\printinunitsof{bp}\prntlen{\linewidth}.
+
+\subsubsection{左}
+
+\newlength{\myleft}
+\setlength{\myleft}{\oddsidemargin}
+
+\addtolength\myleft{1in}
+
+紙左端⇔左カラム左端:
+\printinunitsof{mm}\prntlen{\myleft}.
+←左マージン20 mm（目安）
+
+\subsubsection{左右間}
+
+左カラム左端⇔右カラム右端:
+\printinunitsof{mm}\prntlen{\textwidth}.
+
+左右カラム間:
+\printinunitsof{mm}\prntlen{\columnsep}.
+←カラム間7 mm（目安）
+
+\subsubsection{左}
+
+\newlength{\myright}
+\setlength{\myright}{\paperwidth}
+
+\addtolength\myright{-\myleft}
+\addtolength\myright{-\textwidth}
+
+紙右端⇔右カラム右端:
+\printinunitsof{mm}\prntlen{\myright}.
+←右マージン20 mm（目安）
+
+\acknowledgment{%
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□
+
+  謝辞の文字ズレ確認用。
+  行間で左右の位置が一致していることを確認。
+  特に最終行と他の行の間。
+}
+
+\begin{thebibliography}{9}
+
+\bibitem{one}
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□□■□□□□□□□□□■□□□□□□□□□■
+  □□□□□□□□□
+
+\bibitem{two}
+  参考文献の文字ズレ確認用。
+  行間で左右の位置が一致していることを確認。
+  特に最終行と他の行の間。
+
+\bibitem{three}
+  \textbackslash labelwidth: \the\labelwidth,
+  \textbackslash labelsep: \the\labelsep,
+  \textbackslash labelwidth + \textbackslash labelsep:
+  \newlength{\temptotal}\setlength{\temptotal}{\labelwidth}
+  \addtolength{\temptotal}{\labelsep}\the\temptotal,
+  \textbackslash leftmargin: \the\leftmargin,
+  \textbackslash zw: \the\zw,
+  \textbackslash linewidth: \the\linewidth,
+  \textbackslash textwidth: \the\textwidth.
+
+\end{thebibliography}
+
+\end{document}
