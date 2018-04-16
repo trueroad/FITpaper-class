@@ -201,6 +201,10 @@
 %
 \if@fitclass@no@ja@font
 \else
+
+\ifx l\fitclass@engine
+%
+% LuaLaTeX 用和文フォント設定
 %
 % LuaTeX-ja を使う
 % （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
@@ -212,11 +216,17 @@
   jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
 \fi
 
+\fi
+
 %
 % 数式フォント設定
 %
 \if@fitclass@no@math@font
 \else
+
+\ifx l\fitclass@engine
+%
+% LuaLaTeX 用数式フォント設定
 %
 % 数式フォントは STIX 2 を使用
 % 和文と同サイズだと小さく見えるため 5% 拡大
@@ -227,11 +237,17 @@
 \setmathfont[Scale=1.05]{STIX Two Math}
 \fi
 
+\fi
+
 %
 % 欧文 (LGC) フォント設定
 %
 \if@fitclass@no@lgc@font
 \else
+
+\ifx l\fitclass@engine
+%
+% LuaLaTeX 用欧文フォント設定
 %
 % セリフフォントは STIX 2 を使用
 % サンセリフフォント、等幅フォントは TeX Gyre を使用
@@ -240,6 +256,8 @@
 \setmainfont[Scale=1.05]{STIX Two Text}
 \setsansfont[Scale=1.05]{TeX Gyre Heros}
 \setmonofont[Scale=1.05]{TeX Gyre Cursor}
+\fi
+
 \fi
 
 %%
