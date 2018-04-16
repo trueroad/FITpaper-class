@@ -1,13 +1,13 @@
 <!-- -*- coding: utf-8 -*- -->
-# FIT2018 向け LuaLaTeX クラスファイル
+# FIT2018 向け LaTeX クラスファイル
 
 [https://github.com/trueroad/FITpaper-class
 ](https://github.com/trueroad/FITpaper-class)
 
 [FIT2018第17回情報科学技術フォーラム
 ](https://www.ipsj.or.jp/event/fit/fit2018/index.html)向けに
-LuaLaTeXで使えるクラスファイルを作ってみました。
-pLaTeX 等では使えません。
+LaTeXで使えるクラスファイルを作ってみました。
+LuaLaTeX、pLaTeX、upLaTeX に対応しています。
 基本的には[サイトに記載のある紙サイズ、ページ設定（マージン等）
 ](https://www.ipsj.or.jp/event/fit/fit2018/paper_require.html#sak)や、
 [サイトに掲載されている原稿見本のサンプルファイル
@@ -18,8 +18,9 @@ FITpaper.docx に
 
 ## 必要なもの
 
+### LuaLaTeX で使う場合
+
 * LuaLaTeX
-    + pLaTeX 系には対応していません。
 * LuaTeX-ja
 * [jlreq.cls](https://github.com/abenori/jlreq)
     + 2018/04/11 以降が必要です。
@@ -34,14 +35,34 @@ FITpaper.docx に
     + TeX Gyre Heros
     + TeX Gyre Cursor
 
+### pLaTeX / upLaTeX で使う場合
+
+作成者は基本的に LuaLaTeX を使っているため、
+うまく動かないことがあるかもしれません。
+
+* pLaTeX または upLaTeX
+* [jlreq.cls](https://github.com/abenori/jlreq)
+    + 2018/04/11 以降が必要です。
+    （それ以前でも[パッチ](https://github.com/abenori/jlreq/pull/25)を
+    当てれば恐らく動きます。）
+* 各種フォント
+    + newtx
+    + TeX Gyre Terms
+    + TeX Gyre Heros
+    + TeX Gyre Cursor
+
 ## サンプル
+
+2 種類のサンプルがあります。
 
 * [sample.tex](./sample.tex)
     + サンプルファイル
 * [sample2.tex](./sample2.tex)
     + サンプルファイル（著者が多い場合）
 
-以下のようにするとサンプルファイルをコンパイルして、
+### LuaLaTeX でサンプルをコンパイル
+
+LuaLaTeX の場合は、以下のようにするとサンプルファイルをコンパイルして、
 PDF （sample.pdf と sample2.pdf）を得ることができます。
 
 ```
@@ -52,6 +73,26 @@ $ lualatex sample2.tex
 
 もしくは、 GNU make と latexmk があるなら、
 `make` でサンプルファイル等をコンパイルすることもできます。
+
+### pLaTeX / upLaTeX でサンプルをコンパイル
+
+pLaTeX / upLaTeX の場合は、まず[sample.tex](./sample.tex)の
+
+```tex
+\usepackage{graphicx}
+```
+
+の行にお使いの DVI ドライバオプションを追加してください。
+dvipdfmx の場合は、以下のようになります。
+
+```tex
+\usepackage[dvipdfmx]{graphicx}
+```
+
+それからコンパイルしてください。
+コンパイルの方法は参考書などをご覧ください。
+
+## 原稿の書き方
 
 原稿の書き方は
 [sample.tex](./sample.tex) や上記でコンパイルした sample.pdf
