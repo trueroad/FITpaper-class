@@ -225,6 +225,27 @@ unicode-mathパッケージを読み込むと、
 詳しくはjlreq.clsのドキュメントおよびnidanfloatパッケージの
 ドキュメントをご覧ください。
 
+\subsection{クラスオプション}
+
+クラスでフォント設定しないようにするオプションを用意しています。
+別のフォントを指定したい場合に使うとよいでしょう。
+
+\begin{itemize}
+\item \texttt{no\_jafont\_settings}
+  \begin{itemize}
+  \item 和文フォントを設定しません
+  \end{itemize}
+\item \texttt{no\_lgcfont\_settings}
+  \begin{itemize}
+  \item 欧文フォントを設定しません
+  \end{itemize}
+\item \texttt{no\_mathfont\_settings}
+  \begin{itemize}
+  \item 数式フォントを設定しません
+  \item amsmathパッケージやunicode-mathパッケージもロードしません
+  \end{itemize}
+\end{itemize}
+
 \subsection{脚注}
 
 所属の所で述べたように、所属の出力に脚注の仕組みを使っています。
