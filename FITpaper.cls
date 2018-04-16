@@ -35,6 +35,20 @@
 \ProvidesClass{FITpaper}[2018/04/15 FIT2018 paper class]
 
 %%
+%% エンジン判定
+%%
+
+\ifx\luatexversion\@undefined
+  \ifx\kanjiskip\@undefined
+    \ClassError{FITpaper}{LuaLaTeX or (u)pLaTeX is required.}{\@ehc}
+  \else
+    \let\fitclass@engine=p
+  \fi
+\else
+  \let\fitclass@engine=l
+\fi
+
+%%
 %% クラスオプション
 %%
 
