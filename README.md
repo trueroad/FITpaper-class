@@ -101,6 +101,16 @@ dvipdfmx の場合は、以下のようになります。
 [sample2.tex](./sample2.tex) や上記でコンパイルした sample2.pdf
 をご覧ください。
 
+## 履歴
+
+* 2018-04-16
+    + (u)pLaTeX に対応
+	+ フォントの設定を行わないクラスオプション
+	`no_jafont_settingss`, `no_lgcfont_settings`, `no_mathfont_settings`
+	を追加
+* 2018-04-15
+    + 初版
+
 ## License
 
 Copyright (C) 2018 Masamichi Hosoda. All rights reserved.
