@@ -136,7 +136,7 @@
 \LoadClass[
   twocolumn,%          二段組
   paper=a4,%           用紙サイズ A4
-  fontsize=9bp,%       本文フォントサイズ 9 ポイント
+  jafontsize=9bp,%     本文フォントサイズ 9 ポイント
   jafontscale=1,%      和欧文フォントサイズ比 1 （和文を基準とする）
   line_length=25zw,%   カラム幅は和文文字幅 25 文字分
   head_space=30mm,%    上マージン 30 mm
@@ -246,12 +246,12 @@
 
   \vspace{10bp}
 
-  {\fontsize{12bp}{16bp}\selectfont {\fitpaper@jtitle}} \par
-  {\fontsize{12bp}{16bp}\selectfont \sffamily {\fitpaper@etitle}} \par
+  {\jafontsize{12bp}{16bp}\selectfont {\fitpaper@jtitle}} \par
+  {\jafontsize{12bp}{16bp}\selectfont \sffamily {\fitpaper@etitle}} \par
 
   \vspace{5bp}
 
-  {\fontsize{10.5bp}{14bp}\selectfont \sffamily
+  {\jafontsize{10.5bp}{14bp}\selectfont \sffamily
     \begin{tabular}{\fitpaper@authors}
       \fitpaper@jauthors \\
       \fitpaper@eauthors
@@ -296,10 +296,10 @@
 % フォントサイズ、行送り、前後のアキ（いずれも FITpaper.docx の設定値）
 % ゴシック太字からゴシックへ変更
 %
-\ModifyHeading{section}{font={\fontsize{10.5bp}{12bp}\selectfont\sffamily},
+\ModifyHeading{section}{font={\jafontsize{10.5bp}{12bp}\selectfont\sffamily},
   lines=1, before_lines=0, after_lines=0,
   before_space=8bp, after_space=6bp}
-\ModifyHeading{subsection}{font={\fontsize{10bp}{12bp}\selectfont\sffamily},
+\ModifyHeading{subsection}{font={\jafontsize{10bp}{12bp}\selectfont\sffamily},
   lines=1, before_lines=0, after_lines=0,
   before_space=6bp, after_space=6bp}
 \ModifyHeading{subsubsection}{font={\normalsize\sffamily},
@@ -350,7 +350,7 @@
 %
 \renewenvironment{thebibliography}[1]{%
   \jlreq@oldfontcommand@enable
-  \fontsize{8bp}{10.666667bp}\selectfont% 追加：フォントサイズ・行送り変更
+  \jafontsize{8bp}{10.666667bp}\selectfont% 追加：フォントサイズ・行送り変更
   \ackbibsection{\refname}% 変更：section* -> ackbibsection
   \@mkboth{\refname}{\refname}%
   \list{\@biblabel{\@arabic\c@enumiv}}%
