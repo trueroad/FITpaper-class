@@ -35,6 +35,23 @@
 \ProvidesClass{FITpaper}[2018/04/15 FIT2018 paper class]
 
 %%
+%% クラスオプション
+%%
+
+\newif\if@fitclass@no@ja@font
+\newif\if@fitclass@no@lgc@font
+\newif\if@fitclass@no@math@font
+
+\@fitclass@no@ja@fontfalse
+\@fitclass@no@lgc@fontfalse
+\@fitclass@no@math@fontfalse
+
+\DeclareOption{no_jafont_settings}{\@fitclass@no@ja@fonttrue}
+\DeclareOption{no_lgcfont_settings}{\@fitclass@no@lgc@fonttrue}
+\DeclareOption{no_mathfont_settings}{\@fitclass@no@math@fonttrue}
+\ProcessOptions
+
+%%
 %% 前提条件
 %%
 
@@ -168,6 +185,9 @@
 %
 % 和文フォント設定
 %
+\if@fitclass@no@ja@font
+\else
+%
 % LuaTeX-ja を使う
 % （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
 % 和文フォントは源ノ明朝 / 源ノ角ゴシックを使う、
@@ -176,21 +196,37 @@
 %
 \RequirePackage[sourcehan,deluxe,match,
   jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+\fi
 
 %
-% 数式フォント、欧文フォント設定
+% 数式フォント設定
 %
-% セリフフォント、数式フォントは STIX 2 を使用
-% サンセリフフォント、等幅フォントは TeX Gyre を使用
+\if@fitclass@no@math@font
+\else
+%
+% 数式フォントは STIX 2 を使用
 % 和文と同サイズだと小さく見えるため 5% 拡大
 %
 \RequirePackage{amsmath}
 \RequirePackage{unicode-math}
 \unimathsetup{math-style=ISO,bold-style=ISO}
+\setmathfont[Scale=1.05]{STIX Two Math}
+\fi
+
+%
+% 欧文 (LGC) フォント設定
+%
+\if@fitclass@no@lgc@font
+\else
+%
+% セリフフォントは STIX 2 を使用
+% サンセリフフォント、等幅フォントは TeX Gyre を使用
+% 和文と同サイズだと小さく見えるため 5% 拡大
+%
 \setmainfont[Scale=1.05]{STIX Two Text}
 \setsansfont[Scale=1.05]{TeX Gyre Heros}
 \setmonofont[Scale=1.05]{TeX Gyre Cursor}
-\setmathfont[Scale=1.05]{STIX Two Math}
+\fi
 
 %%
 %% 所属
