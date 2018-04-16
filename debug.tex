@@ -90,10 +90,13 @@ Foo bar baz boo bar baz Department, Foo University.}
 \makeatletter
 FITpaper.cls: \csname ver@FITpaper.cls\endcsname\par
 jlreq.cls: \csname ver@jlreq.cls\endcsname\par
+amsmath.sty: \csname ver@amsmath.sty\endcsname\par
+\ifx\luatexversion\@undefined
+\else
 luatexja.sty: \csname ver@luatexja.sty\endcsname\par
 luatexja-preset.sty: \csname ver@luatexja-preset.sty\endcsname\par
-amsmath.sty: \csname ver@amsmath.sty\endcsname\par
 unicode-math.sty: \csname ver@unicode-math.sty\endcsname\par
+\fi
 \makeatother
 
 \section{長さ}
@@ -104,15 +107,19 @@ unicode-math.sty: \csname ver@unicode-math.sty\endcsname\par
 
 \subsubsection{設定値}
 
+\newlength{\myzh}
+\setlength{\myzh}{1\zh}
 \textbackslash zh:
-\printinunitsof{pt}\prntlen{\zh},
-\printinunitsof{mm}\prntlen{\zh},
-\printinunitsof{bp}\prntlen{\zh}.
+\printinunitsof{pt}\prntlen{\myzh},
+\printinunitsof{mm}\prntlen{\myzh},
+\printinunitsof{bp}\prntlen{\myzh}.
 
+\newlength{\myzw}
+\setlength{\myzw}{1\zw}
 \textbackslash zw:
-\printinunitsof{pt}\prntlen{\zw},
-\printinunitsof{mm}\prntlen{\zw},
-\printinunitsof{bp}\prntlen{\zw}.
+\printinunitsof{pt}\prntlen{\myzw},
+\printinunitsof{mm}\prntlen{\myzw},
+\printinunitsof{bp}\prntlen{\myzw}.
 
 \textbackslash baselineskip:
 \printinunitsof{pt}\prntlen{\baselineskip},
@@ -278,7 +285,7 @@ unicode-math.sty: \csname ver@unicode-math.sty\endcsname\par
   \newlength{\temptotal}\setlength{\temptotal}{\labelwidth}
   \addtolength{\temptotal}{\labelsep}\the\temptotal,
   \textbackslash leftmargin: \the\leftmargin,
-  \textbackslash zw: \the\zw,
+  \textbackslash zw: \the\myzw,
   \textbackslash linewidth: \the\linewidth,
   \textbackslash textwidth: \the\textwidth.
 
