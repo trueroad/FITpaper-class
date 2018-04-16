@@ -164,11 +164,19 @@
 %% 版面設定して jlreq.cls をロード
 %%
 
+% 和欧文フォントサイズ比
+% LuaLaTeX では 1: 和文を基準として欧文をフォント設定で拡大する
+\def\fitclass@jafontscale{1}
+\ifx p\fitclass@engine
+  % (u)pLaTeX では 0.952381 = 1/1.05: 欧文を 5 % 拡大相当にする
+  \def\fitclass@jafitscale{0.952381}
+\fi
+
 \LoadClass[
   twocolumn,%          二段組
   paper=a4,%           用紙サイズ A4
   jafontsize=9bp,%     本文フォントサイズ 9 ポイント
-  jafontscale=1,%      和欧文フォントサイズ比 1 （和文を基準とする）
+  jafontscale=\fitclass@jafontscale,% 和欧文フォントサイズ比
   line_length=25zw,%   カラム幅は和文文字幅 25 文字分
   head_space=30mm,%    上マージン 30 mm
   foot_space=25mm,%    下マージン：jlreq 2018/04/11 まで指定しても無視される
