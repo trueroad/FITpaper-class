@@ -50,6 +50,9 @@ $ lualatex sample.tex
 $ lualatex sample2.tex
 ```
 
+もしくは、 GNU make と latexmk があるなら、
+`make` でサンプルファイル等をコンパイルすることもできます。
+
 原稿の書き方は
 [sample.tex](./sample.tex) や上記でコンパイルした sample.pdf
 をご覧ください。
