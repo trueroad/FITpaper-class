@@ -1,6 +1,6 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2018 向け LuaLaTeX クラスファイル
+% FIT2018 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
 % Copyright (C) 2018 Masamichi Hosoda.
