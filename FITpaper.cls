@@ -237,6 +237,16 @@
 \setmathfont[Scale=1.05]{STIX Two Math}
 \fi
 
+\ifx p\fitclass@engine
+%
+% (u)pLaTeX 用数式フォント設定
+%
+% newtx を使用
+%
+\RequirePackage{amsmath}
+\RequirePackage{newtxmath}
+\fi
+
 \fi
 
 %
@@ -256,6 +266,17 @@
 \setmainfont[Scale=1.05]{STIX Two Text}
 \setsansfont[Scale=1.05]{TeX Gyre Heros}
 \setmonofont[Scale=1.05]{TeX Gyre Cursor}
+\fi
+
+\ifx p\fitclass@engine
+%
+% (u)pLaTeX 用欧文フォント設定
+%
+% TeX Gyre を使用
+%
+\renewcommand{\rmdefault}{qtm}% TeX Gyre Termes
+\renewcommand{\sfdefault}{qhv}% TeX Gyre Hereos
+\renewcommand{\ttdefault}{qcr}% TeX Gyre Cursor
 \fi
 
 \fi
