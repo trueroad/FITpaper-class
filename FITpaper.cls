@@ -267,6 +267,20 @@
 %
 % LuaLaTeX 用欧文フォント設定
 %
+% 欧文フォント設定には fontspec パッケージが必要だが、
+% fontspec パッケージ単体だと和欧文ファミリが連動しなくなってしまう。
+% そこで luatexja-fontspec パッケージを match オプション付きで読み込み、
+% fontspec パッケージの読み込みと和欧文ファミリ連動をさせる。
+%
+\@ifpackageloaded{luatexja-fontspec}{%
+  % 和文フォント設定済
+  % luatexja-preset パッケージが luatexja-fontspec パッケージを読み込み済
+  \relax}{%
+  % 和文フォント未設定
+  % luatexja-fontspec パッケージを match オプション付きで読み込む
+  \RequirePackage[match]{luatexja-fontspec}
+}
+%
 % セリフフォントは STIX 2 を使用
 % サンセリフフォント、等幅フォントは TeX Gyre を使用
 % 和文と同サイズだと小さく見えるため 5% 拡大
