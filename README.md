@@ -26,7 +26,7 @@ FITpaper.docx に
     + 2018/04/11 以降が必要です。
     （それ以前でも[パッチ](https://github.com/abenori/jlreq/pull/25)を
     当てれば恐らく動きます。）
-* 各種フォント
+* 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
     + 源ノ明朝
     + 源ノ角ゴシック
     + [STIX 2](http://www.stixfonts.org/)
@@ -45,7 +45,7 @@ FITpaper.docx に
     + 2018/04/11 以降が必要です。
     （それ以前でも[パッチ](https://github.com/abenori/jlreq/pull/25)を
     当てれば恐らく動きます。）
-* 各種フォント
+* 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
     + newtx
     + TeX Gyre Terms
     + TeX Gyre Heros
