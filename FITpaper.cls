@@ -200,6 +200,11 @@
 % ノンブル無し
 \pagestyle{empty}
 
+% 和欧文スケール比を設定
+\ifx\Cjascale\@undefined
+  \edef\Cjascale\fitclass@jafontscale
+\fi
+
 %%
 %% フォント設定
 %%
