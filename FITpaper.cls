@@ -32,7 +32,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITpaper}[2018/04/21 FIT2018 paper class]
+\ProvidesClass{FITpaper}[2018/05/19 FIT2018 paper class]
 
 %%
 %% エンジン判定
@@ -187,8 +187,8 @@
 ]{jlreq}
 
 % 版面の高さ
-\@ifclasslater{jlreq}{2018/04/14}{
-  % jlreq 2018/04/11 の次バージョン（***FIXME*** 具体的なバージョン）から
+\@ifclasslater{jlreq}{2018/05/19}{
+  % jlreq 2018/05/19 から
   % クラスオプション head_space, foot_space
   % 両方同時指定可能になったのでクラスオプションで完結、何もしない。
   \relax}{
