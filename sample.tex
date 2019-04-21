@@ -1,11 +1,11 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2018 向け LaTeX クラスファイル
+% FIT2019 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
 % サンプルファイル
 %
-% Copyright (C) 2018 Masamichi Hosoda.
+% Copyright (C) 2018, 2019 Masamichi Hosoda.
 % All rights reserved.
 % 
 
@@ -18,10 +18,10 @@
 \usepackage[balance]{nidanfloat}
 
 % 和文タイトル
-\jtitle{FIT2018向け\LaTeX クラスファイルのサンプル}
+\jtitle{FIT2019向け\LaTeX クラスファイルのサンプル}
 
 % 欧文タイトル
-\etitle{Sample \LaTeX~Class File for FIT2018}
+\etitle{Sample \LaTeX~Class File for FIT2019}
 
 % 著者数：著者の数だけ c を書く
 \authors{cc}
@@ -53,7 +53,7 @@ Foo bar baz boo bar baz Laboratories, Foo Corporation.}
 \subsection{サブセクション}
 \subsubsection{サブサブセクション}
 
-FIT2018第17回情報科学技術フォーラム\cite{fit2018}向けに
+FIT2019第18回情報科学技術フォーラム\cite{fit2019}向けに
 \LaTeX で使えるクラスファイル\cite{fitpaper-class}を作ってみました。
 Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 基本的にはサイトに記載のある紙サイズ、ページ設定（マージン等）や、
@@ -71,16 +71,22 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 \item jlreq.cls
   \begin{itemize}
   \item 2018/04/11 以降が必要です。
-    （それ以前でもパッチ\cite{column_gap}を当てれば恐らく動きます。）
+    \begin{itemize}
+    \item \TeX~Live 2018初版に収録されているものは古くてダメですが
+      \TeX~Live 2018 frozenや\TeX~Live 2019なら大丈夫です。
+    \end{itemize}
   \end{itemize}
-\item 各種フォント
+\item 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
   \begin{itemize}
-  \item 源ノ明朝
-  \item 源ノ角ゴシック
+  \item 源ノ明朝/源ノ角ゴシック
+    \begin{itemize}
+    \item \TeX~Liveには収録されていないようなので
+      Lua\LaTeX から見えるところにインストールしておく必要があります。
+    \end{itemize}
   \item STIX 2
     \begin{itemize}
-    \item \TeX~Live 2017には収録されていないようなので、
-      自分でダウンロードしてインストールしておく必要があります。
+    \item \TeX~Live 2018初版には収録されていなかったようですが
+      \TeX~Live 2018 frozenや\TeX~Live 2019なら収録されているようです。
     \end{itemize}
   \item \TeX~Gyre Heros
   \item \TeX~Gyre Cursor
@@ -97,9 +103,12 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 \item jlreq.cls
   \begin{itemize}
   \item 2018/04/11 以降が必要です。
-    （それ以前でもパッチ\cite{column_gap}を当てれば恐らく動きます。）
+    \begin{itemize}
+    \item \TeX~Live 2018初版に収録されているものは古くてダメですが
+      \TeX~Live 2018 frozenや\TeX~Live 2019なら大丈夫です。
+    \end{itemize}
   \end{itemize}
-\item 各種フォント
+\item 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
   \begin{itemize}
   \item newtx
   \item \TeX~Gyre Terms
@@ -146,7 +155,7 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 各著者名に\texttt{\textbackslash af\mbox{}fmark}で所属番号を付けます。
 所属名は所属番号ごとに\texttt{\textbackslash af\mbox{}ftext}で指定します。
 
-FIT2018サイトの原稿見本では所属番号ではなく、
+FIT2019サイトの原稿見本では所属番号ではなく、
 所属記号として$\dag$や$\ddag$が使われていますが、
 本クラスファイルでは記号ではなく番号にしています。
 これは人名に$\dag$などを付けたくなかったからです。
@@ -264,15 +273,12 @@ FITの原稿本文で脚注を使いたくなることは少ないと思いま�
 
 \begin{thebibliography}{9}
 
-\bibitem{fit2018}
-  FIT2018第17回情報科学技術フォーラム. \\
-  https://www.ipsj.or.jp/event/fit/fit2018/index.html
+\bibitem{fit2019}
+  FIT2019第18回情報科学技術フォーラム. \\
+  https://www.ipsj.or.jp/event/fit/fit2019/
 \bibitem{fitpaper-class}
-  FIT2018向け\LaTeX クラスファイル. \\
+  FIT2019向け\LaTeX クラスファイル. \\
   https://github.com/trueroad/FITpaper-class
-\bibitem{column_gap}
-  Fix \verb|`column_gap`| class option. \\
-  https://github.com/abenori/jlreq/pull/25
 \bibitem{lilypond}
   楽譜作成プログラムLilyPond. \\
   http://lilypond.org

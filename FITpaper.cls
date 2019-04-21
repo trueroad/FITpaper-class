@@ -1,9 +1,9 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2018 向け LaTeX クラスファイル
+% FIT2019 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
-% Copyright (C) 2018 Masamichi Hosoda.
+% Copyright (C) 2018, 2019 Masamichi Hosoda.
 % All rights reserved.
 % 
 % Redistribution and use in source and binary forms, with or without
@@ -32,7 +32,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITpaper}[2018/05/19 FIT2018 paper class]
+\ProvidesClass{FITpaper}[2019/04/21 FIT2018 paper class]
 
 %%
 %% エンジン判定
@@ -70,9 +70,9 @@
 %%
 
 %
-% FIT2018
+% FIT2019
 % Web 記載のページ設定
-% https://www.ipsj.or.jp/event/fit/fit2018/paper_require.html
+% https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html
 %
 % 用紙サイズ
 %   A4 (210 mm x 297 mm)
@@ -83,7 +83,7 @@
 %
 
 %
-% FIT2018 サンプルファイル FITpaper.docx 設定より
+% FIT2019 サンプルファイル FITpaper.docx 設定より
 %
 % 本文フォントサイズ
 %   9 ポイント = 9 bp
@@ -149,7 +149,7 @@
 % バージョンによって行数の実数指定可否の分岐ができないので、
 % これ以前のバージョンでも、行数実数指定でなく版面高さの直接指定とする。
 %
-% ・jlreq.cls （未リリース、2018/04/14 以降）
+% ・jlreq.cls 2018/05/19 以降
 % 天の空き量と地の空き量に異なる値を設定したい
 % https://github.com/abenori/jlreq/issues/28
 % の議論の結果、上下双方のマージンを同時に指定可能になった。

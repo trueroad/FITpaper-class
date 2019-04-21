@@ -1,17 +1,17 @@
 <!-- -*- coding: utf-8 -*- -->
-# FIT2018 向け LaTeX クラスファイル
+# FIT2019 向け LaTeX クラスファイル
 
 [https://github.com/trueroad/FITpaper-class
 ](https://github.com/trueroad/FITpaper-class)
 
-[FIT2018第17回情報科学技術フォーラム
-](https://www.ipsj.or.jp/event/fit/fit2018/index.html)向けに
+[FIT2019第18回情報科学技術フォーラム
+](https://www.ipsj.or.jp/event/fit/fit2019/)向けに
 LaTeXで使えるクラスファイルを作ってみました。
 LuaLaTeX、pLaTeX、upLaTeX に対応しています。
 基本的には[サイトに記載のある紙サイズ、ページ設定（マージン等）
-](https://www.ipsj.or.jp/event/fit/fit2018/paper_require.html#sak)や、
+](https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html#sak)や、
 [サイトに掲載されている原稿見本のサンプルファイル
-](https://www.ipsj.or.jp/event/fit/fit2018/paper_require.html#miho)
+](https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html#miho)
 FITpaper.docx に
 設定されているフォントサイズ、行送り、アキ等と
 同様なものを指定しているつもりです。
@@ -24,14 +24,15 @@ FITpaper.docx に
 * LuaTeX-ja
 * [jlreq.cls](https://github.com/abenori/jlreq)
     + 2018/04/11 以降が必要です。
-    （それ以前でも[パッチ](https://github.com/abenori/jlreq/pull/25)を
-    当てれば恐らく動きます。）
+        - TeX Live 2018 初版に収録されているものは古くてダメですが
+          TeX Live 2018 frozen や TeX Live 2019 なら大丈夫です。
 * 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
-    + 源ノ明朝
-    + 源ノ角ゴシック
-    + [STIX 2](http://www.stixfonts.org/)
-        - TeX Live 2017 には収録されていないようなので、
-        自分でダウンロードしてインストールしておく必要があります。
+    + 源ノ明朝 / 源ノ角ゴシック
+        - TeX Live には収録されていないようなので
+          LuaLaTeX から見えるところにインストールしておく必要があります。
+    + STIX 2
+        - TeX Live 2018 初版には収録されていなかったようですが
+          TeX Live 2018 frozen や TeX Live 2019 なら収録されているようです。
     + TeX Gyre Heros
     + TeX Gyre Cursor
 
@@ -43,8 +44,8 @@ FITpaper.docx に
 * pLaTeX または upLaTeX
 * [jlreq.cls](https://github.com/abenori/jlreq)
     + 2018/04/11 以降が必要です。
-    （それ以前でも[パッチ](https://github.com/abenori/jlreq/pull/25)を
-    当てれば恐らく動きます。）
+        - TeX Live 2018 初版に収録されているものは古くてダメですが
+          TeX Live 2018 frozen や TeX Live 2019 なら大丈夫です。
 * 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
     + newtx
     + TeX Gyre Terms
@@ -103,24 +104,31 @@ dvipdfmx の場合は、以下のようになります。
 
 ## 履歴
 
+* 2019-04-21
+    + FIT2019 向けに更新
+        - フォーマットは FIT2018 から変更されていないようです。
+            - テンプレートファイル FITpaper.dotx は FIT2018 とバイナリ一致、
+              サンプルファイル FITpaper.docx は FIT2018 から変更があるものの
+              原稿で使用するスタイル定義には変更なし。
+    + あわせて「必要なもの」の内容を更新
 * 2018-05-19
     + `\Cjascale` 設定追加に伴うバグを修正
     + jlreq 2018-05-19 に対応
 * 2018-04-21
     + 和欧文スケール比 `\Cjascale` の設定を追加
     + フォントの設定を行わないクラスオプションの組み合わせによって
-	エラーが発生したり、和欧文ファミリ連動しなくなったりすることを修正
+    エラーが発生したり、和欧文ファミリ連動しなくなったりすることを修正
 * 2018-04-16
     + (u)pLaTeX に対応
-	+ フォントの設定を行わないクラスオプション
-	`no_jafont_settingss`, `no_lgcfont_settings`, `no_mathfont_settings`
-	を追加
+    + フォントの設定を行わないクラスオプション
+    `no_jafont_settingss`, `no_lgcfont_settings`, `no_mathfont_settings`
+    を追加
 * 2018-04-15
     + 初版
 
 ## License
 
-Copyright (C) 2018 Masamichi Hosoda. All rights reserved.
+Copyright (C) 2018, 2019 Masamichi Hosoda. All rights reserved.
 
 License: BSD-2-Clause
 
