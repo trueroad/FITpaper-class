@@ -221,11 +221,13 @@
 %
 % LuaTeX-ja を使う
 % （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
-% 和文フォントは源ノ明朝 / 源ノ角ゴシックを使う、
-% 複数のウェイトを使う、欧文フォントのファミリ指定と連動させる
-% JFM は jlreq のものを使う
+% sourcehan: 和文フォントは源ノ明朝 / 源ノ角ゴシックを使う
+% deluxe:    複数のウェイトを使う
+% match:     欧文フォントのファミリ指定と連動させる
+% nfss-only: luatexja-fontspec を使わない（メモリ・時間節約）
+% jfm_...:   JFM は jlreq のものを使う
 %
-\RequirePackage[sourcehan,deluxe,match,
+\RequirePackage[sourcehan,deluxe,match,nfssonly,
   jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
 \fi
 
@@ -244,6 +246,7 @@
 % 数式フォントは STIX 2 を使用
 % 和文と同サイズだと小さく見えるため 5% 拡大
 %
+\RequirePackage[no-math]{fontspec}
 \RequirePackage{amsmath}
 \RequirePackage{unicode-math}
 \unimathsetup{math-style=ISO,bold-style=ISO}
@@ -272,24 +275,15 @@
 %
 % LuaLaTeX 用欧文フォント設定
 %
-% 欧文フォント設定には fontspec パッケージが必要だが、
-% fontspec パッケージ単体だと和欧文ファミリが連動しなくなってしまう。
-% そこで luatexja-fontspec パッケージを match オプション付きで読み込み、
-% fontspec パッケージの読み込みと和欧文ファミリ連動をさせる。
-%
-\@ifpackageloaded{luatexja-fontspec}{%
-  % 和文フォント設定済
-  % luatexja-preset パッケージが luatexja-fontspec パッケージを読み込み済
-  \relax}{%
-  % 和文フォント未設定
-  % luatexja-fontspec パッケージを match オプション付きで読み込む
-  \RequirePackage[match]{luatexja-fontspec}
-}
+% ここでは和欧文ファミリ連動の考慮はしない。
+% 和文フォント設定時に luatexja-preset または luatexja-fontspec に対して
+% match オプションを使うなどの必要がある。
 %
 % セリフフォントは STIX 2 を使用
 % サンセリフフォント、等幅フォントは TeX Gyre を使用
 % 和文と同サイズだと小さく見えるため 5% 拡大
 %
+\RequirePackage[no-math]{fontspec}
 \setmainfont[Scale=1.05]{STIX Two Text}
 \setsansfont[Scale=1.05]{TeX Gyre Heros}
 \setmonofont[Scale=1.05]{TeX Gyre Cursor}
