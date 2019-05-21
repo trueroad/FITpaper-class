@@ -172,7 +172,7 @@
   \def\fitclass@jafitscale{0.952381}
 \fi
 
-\LoadClass[
+\LoadClass[%
   twocolumn,%          二段組
   paper=a4,%           用紙サイズ A4
   jafontsize=9bp,%     本文フォントサイズ 9 ポイント
@@ -187,11 +187,11 @@
 ]{jlreq}
 
 % 版面の高さ
-\@ifclasslater{jlreq}{2018/05/19}{
+\@ifclasslater{jlreq}{2018/05/19}{%
   % jlreq 2018/05/19 から
   % クラスオプション head_space, foot_space
   % 両方同時指定可能になったのでクラスオプションで完結、何もしない。
-  \relax}{
+  \relax}{%
   % jlreq 2018/04/11 まで
   % 2018/04/11 で行数の実数指定できなくなったため直接版面の高さを設定する。
   % 行送りの整数倍に補正しない。
@@ -227,7 +227,7 @@
 % nfss-only: luatexja-fontspec を使わない（メモリ・時間節約）
 % jfm_...:   JFM は jlreq のものを使う
 %
-\RequirePackage[sourcehan,deluxe,match,nfssonly,
+\RequirePackage[sourcehan,deluxe,match,nfssonly,%
   jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
 \fi
 
@@ -406,14 +406,14 @@
 % フォントサイズ、行送り、前後のアキ（いずれも FITpaper.docx の設定値）
 % ゴシック太字からゴシックへ変更
 %
-\ModifyHeading{section}{font={\jafontsize{10.5bp}{12bp}\selectfont\sffamily},
-  lines=1, before_lines=0, after_lines=0,
+\ModifyHeading{section}{font={\jafontsize{10.5bp}{12bp}\selectfont\sffamily},%
+  lines=1, before_lines=0, after_lines=0,%
   before_space=8bp, after_space=6bp}
-\ModifyHeading{subsection}{font={\jafontsize{10bp}{12bp}\selectfont\sffamily},
-  lines=1, before_lines=0, after_lines=0,
+\ModifyHeading{subsection}{font={\jafontsize{10bp}{12bp}\selectfont\sffamily},%
+  lines=1, before_lines=0, after_lines=0,%
   before_space=6bp, after_space=6bp}
-\ModifyHeading{subsubsection}{font={\normalsize\sffamily},
-  lines=1, before_lines=0, after_lines=0,
+\ModifyHeading{subsubsection}{font={\normalsize\sffamily},%
+  lines=1, before_lines=0, after_lines=0,%
   before_space=0pt, after_space=0pt}
 
 %
@@ -422,7 +422,7 @@
 % フォントサイズ、行送り（いずれも FITpaper.docx の設定値）
 % フォントをゴシック太字からゴシックへ変更
 %
-\jlreqsetup{caption_font={\normalsize\selectfont\sffamily},
+\jlreqsetup{caption_font={\normalsize\selectfont\sffamily},%
   caption_label_font={\normalsize\selectfont\sffamily}}
 
 %
@@ -433,16 +433,16 @@
 % 節番号のような数字をつけない、センタリング
 %
 % jlreq 2017/06/11 でセンタリングが変更になっている
-\@ifclasslater{jlreq}{2017/06/11}{
+\@ifclasslater{jlreq}{2017/06/11}{%
   % jlreq 2017/06/11 から
-  \NewBlockHeading{ackbibsection}{1}{font={\normalsize\selectfont\sffamily},
-    lines=1, before_lines=0, after_lines=0,
-    before_space=6bp, after_space=2pt, label_format={},
-    align=center}}{
+  \NewBlockHeading{ackbibsection}{1}{font={\normalsize\selectfont\sffamily},%
+    lines=1, before_lines=0, after_lines=0,%
+    before_space=6bp, after_space=2pt, label_format={},%
+    align=center}}{%
   % jlreq 2017/04/29 まで
-  \NewBlockHeading{ackbibsection}{1}{font={\normalsize\selectfont\sffamily},
-    lines=1, before_lines=0, after_lines=0,
-    before_space=6bp, after_space=2pt, label_format={},
+  \NewBlockHeading{ackbibsection}{1}{font={\normalsize\selectfont\sffamily},%
+    lines=1, before_lines=0, after_lines=0,%
+    before_space=6bp, after_space=2pt, label_format={},%
     indent=center}}
 
 %%
