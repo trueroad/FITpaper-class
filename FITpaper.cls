@@ -32,7 +32,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITpaper}[2019/04/21 FIT2019 paper class]
+\ProvidesClass{FITpaper}[2019/05/21 FIT2019 paper class]
 
 %%
 %% エンジン判定
