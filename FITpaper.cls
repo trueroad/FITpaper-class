@@ -417,6 +417,15 @@
   before_space=0pt, after_space=0pt}
 
 %
+% \paragraph, \subparagprah
+%
+% 特に FITpaper.docx には設定されていないが使えるようにしておく
+% ゴシック太字からゴシックへ変更
+%
+\ModifyHeading{paragraph}{font={\normalsize\sffamily}}
+\ModifyHeading{subparagraph}{font={\normalsize\sffamily}}
+
+%
 % caption 関係
 %
 % フォントサイズ、行送り（いずれも FITpaper.docx の設定値）
