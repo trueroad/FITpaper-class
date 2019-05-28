@@ -453,6 +453,7 @@
     lines=1, before_lines=0, after_lines=0,%
     before_space=6bp, after_space=2pt, label_format={},%
     indent=center}}
+\newcommand{\toclevel@ackbibsection}{1}
 
 %%
 %% 参考文献
