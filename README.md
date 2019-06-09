@@ -104,6 +104,11 @@ dvipdfmx の場合は、以下のようになります。
 
 ## 履歴
 
+* 2019-06-09
+    + `\paragraph` と `\subparagprah` を使えるようにしました。
+      特に FITpaper.docx に該当する設定があるわけではありません。
+    + `hyperref` パッケージ用に `ackbibsection` の toclevel を追加しました。
+      これによって警告が出なくなります。
 * 2019-05-21
     + LuaLaTeX で luatexja-fontspec を使わないようにしました。
       これによってメモリ使用量やコンパイル時間の低減が見込まれます。
