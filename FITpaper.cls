@@ -220,8 +220,14 @@
 % LuaLaTeX 用和文フォント設定
 %
 
-\@ifpackagelater{luatexja}{2019-11-17}{%
-  % luatexja 2019-11-17 から
+\ifnum\directlua{
+      if \LuaTeXjaversion >= 20191117.0 then
+        tex.write("1")
+      else
+        tex.write("0")
+      end
+    }>0
+  % luatexja 20191117.0 から
   % フォントのプリセット設定に原ノ味フォントを指定可能
 
   % LuaTeX-ja を使う
@@ -233,8 +239,9 @@
   % jfm_...:   JFM は jlreq のものを使う
   %
   \RequirePackage[haranoaji,deluxe,match,nfssonly,%
-    jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}}{%
-  % luatexja 2019-09-26 まで
+    jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+\else
+  % luatexja 20190926.0 まで
   % フォントのプリセット設定に原ノ味フォントを指定できない
 
   % LuaTeX-ja を使う
@@ -255,7 +262,9 @@
     gt-bx = HaranoAjiGothic-Bold.otf,
     gt-eb = HaranoAjiGothic-Heavy.otf,
     mg-m = HaranoAjiGothic-Medium.otf}
-  \ltjapplypreset{HaranoAji}}
+  \ltjapplypreset{HaranoAji}
+\fi
+
 \fi
 
 \fi
