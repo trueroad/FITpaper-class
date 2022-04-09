@@ -1,22 +1,24 @@
 <!-- -*- coding: utf-8 -*- -->
-# FIT2019 向け LaTeX クラスファイル
+# FIT2022 向け LaTeX クラスファイル
 
 [https://github.com/trueroad/FITpaper-class
 ](https://github.com/trueroad/FITpaper-class)
 
-[FIT2019第18回情報科学技術フォーラム
-](https://www.ipsj.or.jp/event/fit/fit2019/)向けに
+[FIT2022第21回情報科学技術フォーラム
+](https://www.ipsj.or.jp/event/fit/fit2022/)向けに
 LaTeXで使えるクラスファイルを作ってみました。
 LuaLaTeX、pLaTeX、upLaTeX に対応しています。
 基本的には[サイトに記載のある紙サイズ、ページ設定（マージン等）
-](https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html#sak)や、
+](https://www.ipsj.or.jp/event/fit/fit2022/paper_require.html#hdg1)や、
 [サイトに掲載されている原稿見本のサンプルファイル
-](https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html#miho)
+](https://www.ipsj.or.jp/event/fit/fit2022/paper_require.html#hdg2)
 FITpaper.docx に
 設定されているフォントサイズ、行送り、アキ等と
 同様なものを指定しているつもりです。
 
 ## 必要なもの
+
+TeX Live 2019 frozen や TeX Live 2020 以降であれば使えます。
 
 ### LuaLaTeX で使う場合
 
@@ -27,9 +29,9 @@ FITpaper.docx に
         - TeX Live 2018 初版に収録されているものは古くてダメですが
           TeX Live 2018 frozen や TeX Live 2019 なら大丈夫です。
 * 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
-    + 源ノ明朝 / 源ノ角ゴシック
-        - TeX Live には収録されていないようなので
-          LuaLaTeX から見えるところにインストールしておく必要があります。
+    + [原ノ味フォント](https://github.com/trueroad/HaranoAjiFonts)
+        - TeX Live 2019 初版には収録されていませんが
+          TeX Live 2019 frozen や TeX Live 2020 なら収録されています。
     + STIX 2
         - TeX Live 2018 初版には収録されていなかったようですが
           TeX Live 2018 frozen や TeX Live 2019 なら収録されているようです。
@@ -80,14 +82,14 @@ $ lualatex sample2.tex
 pLaTeX / upLaTeX の場合は、まず[sample.tex](./sample.tex)の
 
 ```tex
-\usepackage{graphicx}
+\documentclass{FITpaper}
 ```
 
 の行にお使いの DVI ドライバオプションを追加してください。
 dvipdfmx の場合は、以下のようになります。
 
 ```tex
-\usepackage[dvipdfmx]{graphicx}
+\documentclass[dvipdfmx]{FITpaper}
 ```
 
 それからコンパイルしてください。
@@ -104,6 +106,16 @@ dvipdfmx の場合は、以下のようになります。
 
 ## 履歴
 
+* 2021-04-09
+    + FIT2022 向けに更新
+        - フォーマットは FIT2019 から変更されていないようです。
+            - テンプレートファイル FITpaper.dotx
+              サンプルファイル FITpaper.docx ともに FIT2019 とバイナリ一致。
+    + 和文フォントを[
+原ノ味フォント
+](https://github.com/trueroad/HaranoAjiFonts)に変更
+        - TeX Live 2020 以降のデフォルト和文フォントです。
+    + あわせて「必要なもの」の内容を更新
 * 2019-06-09
     + `\paragraph` と `\subparagprah` を使えるようにしました。
       特に FITpaper.docx に該当する設定があるわけではありません。
@@ -141,7 +153,7 @@ dvipdfmx の場合は、以下のようになります。
 
 ## License
 
-Copyright (C) 2018, 2019 Masamichi Hosoda. All rights reserved.
+Copyright (C) 2018, 2019, 2022 Masamichi Hosoda. All rights reserved.
 
 License: BSD-2-Clause
 
