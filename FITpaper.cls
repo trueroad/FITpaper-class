@@ -1,9 +1,9 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2019 向け LaTeX クラスファイル
+% FIT2022 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
-% Copyright (C) 2018, 2019 Masamichi Hosoda.
+% Copyright (C) 2018, 2019, 2022 Masamichi Hosoda.
 % All rights reserved.
 %
 % Redistribution and use in source and binary forms, with or without
@@ -32,7 +32,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITpaper}[2019/06/09 FIT2019 paper class]
+\ProvidesClass{FITpaper}[2022/04/09 FIT2022 paper class]
 
 %%
 %% エンジン判定
@@ -70,9 +70,9 @@
 %%
 
 %
-% FIT2019
+% FIT2022
 % Web 記載のページ設定
-% https://www.ipsj.or.jp/event/fit/fit2019/paper_require.html
+% https://www.ipsj.or.jp/event/fit/fit2022/paper_require.html
 %
 % 用紙サイズ
 %   A4 (210 mm x 297 mm)
@@ -83,7 +83,7 @@
 %
 
 %
-% FIT2019 サンプルファイル FITpaper.docx 設定より
+% FIT2022 サンプルファイル FITpaper.docx 設定より
 %
 % 本文フォントサイズ
 %   9 ポイント = 9 bp
