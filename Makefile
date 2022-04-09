@@ -4,7 +4,7 @@
 .PHONY: all clean dist-clean sample debug figure figure-clean
 
 # 使用するコマンド類の定義
-LATEXMK = latexmk -lualatex
+LLMK = llmk
 LILYPOND = lilypond # 図を生成したいときのみ使用
 RM = rm -f
 
@@ -22,7 +22,7 @@ FIGUREPDFS = invention1.pdf
 all: sample debug
 
 clean:
-	$(RM) *.aux *.log *.out *.fls *.fdb_latexmk *~
+	$(RM) *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz *~
 
 dist-clean: clean
 	$(RM) $(SAMPLEPDFS) $(DEBUGPDFS)
@@ -38,7 +38,7 @@ figure: $(FIGUREPDFS)
 
 # LuaLaTeX ソースから PDF へコンパイル
 %.pdf: %.tex
-	$(LATEXMK) $<
+	$(LLMK) $<
 
 # LilyPond で図 PDF を生成する
 %.pdf: %.ly

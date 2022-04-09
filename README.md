@@ -74,7 +74,7 @@ $ lualatex sample.tex
 $ lualatex sample2.tex
 ```
 
-もしくは、 GNU make と latexmk があるなら、
+もしくは、 GNU make と llmk があるなら、
 `make` でサンプルファイル等をコンパイルすることもできます。
 
 ### pLaTeX / upLaTeX でサンプルをコンパイル
@@ -91,6 +91,16 @@ dvipdfmx の場合は、以下のようになります。
 ```tex
 \documentclass[dvipdfmx]{FITpaper}
 ```
+
+llmk を使う場合はさらに
+
+```tex
+% +++
+% latex = "lualatex"
+% +++
+```
+
+の `lualatex` を `platex` や `uplatex` に変更してください。
 
 それからコンパイルしてください。
 コンパイルの方法は参考書などをご覧ください。
@@ -115,6 +125,7 @@ dvipdfmx の場合は、以下のようになります。
 原ノ味フォント
 ](https://github.com/trueroad/HaranoAjiFonts)に変更
         - TeX Live 2020 以降のデフォルト和文フォントです。
+    + ビルド方法を latexmk から llmk へ変更
     + あわせて「必要なもの」の内容を更新
 * 2019-06-09
     + `\paragraph` と `\subparagprah` を使えるようにしました。
