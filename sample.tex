@@ -1,13 +1,13 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2019 向け LaTeX クラスファイル
+% FIT2022 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
 % サンプルファイル
 %
-% Copyright (C) 2018, 2019 Masamichi Hosoda.
+% Copyright (C) 2018, 2019, 2022 Masamichi Hosoda.
 % All rights reserved.
-% 
+%
 
 \documentclass{FITpaper}
 
@@ -18,10 +18,10 @@
 \usepackage[balance]{nidanfloat}
 
 % 和文タイトル
-\jtitle{FIT2019向け\LaTeX クラスファイルのサンプル}
+\jtitle{FIT2022向け\LaTeX クラスファイルのサンプル}
 
 % 欧文タイトル
-\etitle{Sample \LaTeX~Class File for FIT2019}
+\etitle{Sample \LaTeX~Class File for FIT2022}
 
 % 著者数：著者の数だけ c を書く
 \authors{cc}
@@ -53,7 +53,7 @@ Foo bar baz boo bar baz Laboratories, Foo Corporation.}
 \subsection{サブセクション}
 \subsubsection{サブサブセクション}
 
-FIT2019第18回情報科学技術フォーラム\cite{fit2019}向けに
+FIT2022第21回情報科学技術フォーラム\cite{fit2022}向けに
 \LaTeX で使えるクラスファイル\cite{fitpaper-class}を作ってみました。
 Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 基本的にはサイトに記載のある紙サイズ、ページ設定（マージン等）や、
@@ -62,6 +62,8 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 同様なものを指定しているつもりです。
 
 \section{必要なもの}
+
+\TeX~Live 2019 frozenや\TeX~Live 2020以降であれば使えます。
 
 \subsection{Lua\LaTeX で使う場合}
 
@@ -78,10 +80,10 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
   \end{itemize}
 \item 各種フォント（本クラスファイルのデフォルト設定で使用するフォント）
   \begin{itemize}
-  \item 源ノ明朝/源ノ角ゴシック
+  \item 原ノ味フォント
     \begin{itemize}
-    \item \TeX~Liveには収録されていないようなので
-      Lua\LaTeX から見えるところにインストールしておく必要があります。
+    \item \TeX~Live 2019初版には収録されていませんが
+      \TeX~Live 2019 frozenや\TeX~Live 2020なら収録されています。
     \end{itemize}
   \item STIX 2
     \begin{itemize}
@@ -155,7 +157,7 @@ Lua\LaTeX 、p\LaTeX 、up\LaTeX に対応しています。
 各著者名に\texttt{\textbackslash af\mbox{}fmark}で所属番号を付けます。
 所属名は所属番号ごとに\texttt{\textbackslash af\mbox{}ftext}で指定します。
 
-FIT2019サイトの原稿見本では所属番号ではなく、
+FIT2022サイトの原稿見本では所属番号ではなく、
 所属記号として$\dag$や$\ddag$が使われていますが、
 本クラスファイルでは記号ではなく番号にしています。
 これは人名に$\dag$などを付けたくなかったからです。
@@ -273,11 +275,11 @@ FITの原稿本文で脚注を使いたくなることは少ないと思いま�
 
 \begin{thebibliography}{9}
 
-\bibitem{fit2019}
-  FIT2019第18回情報科学技術フォーラム. \\
-  https://www.ipsj.or.jp/event/fit/fit2019/
+\bibitem{fit2022}
+  FIT2022第21回情報科学技術フォーラム. \\
+  https://www.ipsj.or.jp/event/fit/fit2022/
 \bibitem{fitpaper-class}
-  FIT2019向け\LaTeX クラスファイル. \\
+  FIT2022向け\LaTeX クラスファイル. \\
   https://github.com/trueroad/FITpaper-class
 \bibitem{lilypond}
   楽譜作成プログラムLilyPond. \\
