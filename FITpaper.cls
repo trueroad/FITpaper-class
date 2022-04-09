@@ -5,7 +5,7 @@
 %
 % Copyright (C) 2018, 2019 Masamichi Hosoda.
 % All rights reserved.
-% 
+%
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
 % are met:
@@ -219,16 +219,43 @@
 %
 % LuaLaTeX 用和文フォント設定
 %
-% LuaTeX-ja を使う
-% （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
-% sourcehan: 和文フォントは源ノ明朝 / 源ノ角ゴシックを使う
-% deluxe:    複数のウェイトを使う
-% match:     欧文フォントのファミリ指定と連動させる
-% nfss-only: luatexja-fontspec を使わない（メモリ・時間節約）
-% jfm_...:   JFM は jlreq のものを使う
-%
-\RequirePackage[sourcehan,deluxe,match,nfssonly,%
-  jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+
+\@ifpackagelater{luatexja}{2019-11-17}{%
+  % luatexja 2019-11-17 から
+  % フォントのプリセット設定に原ノ味フォントを指定可能
+
+  % LuaTeX-ja を使う
+  % （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
+  % haranoaji: 和文フォントは原ノ味フォントを使う
+  % deluxe:    複数のウェイトを使う
+  % match:     欧文フォントのファミリ指定と連動させる
+  % nfss-only: luatexja-fontspec を使わない（メモリ・時間節約）
+  % jfm_...:   JFM は jlreq のものを使う
+  %
+  \RequirePackage[haranoaji,deluxe,match,nfssonly,%
+    jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}}{%
+  % luatexja 2019-09-26 まで
+  % フォントのプリセット設定に原ノ味フォントを指定できない
+
+  % LuaTeX-ja を使う
+  % （LuaLaTeX を使っていれば jlreq.cls が自動的にロードする）
+  % deluxe:    複数のウェイトを使う
+  % match:     欧文フォントのファミリ指定と連動させる
+  % nfss-only: luatexja-fontspec を使わない（メモリ・時間節約）
+  % jfm_...:   JFM は jlreq のものを使う
+  %
+  \RequirePackage[deluxe,match,nfssonly,%
+    jfm_yoko=jlreq,jfm_tate=jlreqv]{luatexja-preset}
+  % 和文フォントに原ノ味フォントを設定する
+  \ltjnewpreset{HaranoAji}{%
+    mc-l = HaranoAjiMincho-Light.otf,
+    mc-m = HaranoAjiMincho-Regular.otf,
+    mc-bx = HaranoAjiMincho-Bold.otf,
+    gt-m = HaranoAjiGothic-Regular.otf,
+    gt-bx = HaranoAjiGothic-Bold.otf,
+    gt-eb = HaranoAjiGothic-Heavy.otf,
+    mg-m = HaranoAjiGothic-Medium.otf}
+  \ltjapplypreset{HaranoAji}}
 \fi
 
 \fi
