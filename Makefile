@@ -31,19 +31,28 @@ PLATEXPDFS = $(LUALATEXPDFS:.pdf=.platex.pdf)
 # upLaTeX で生成する PDF
 UPLATEXPDFS = $(LUALATEXPDFS:.pdf=.uplatex.pdf)
 
-# TeX で生成するすべての PDF
-TEXPDFS = $(LUALATEXPDFS) $(PLATEXPDFS) $(UPLATEXPDFS)
-
-# TeX ソース
-TEXS = $(TEXPDFS:.pdf=.tex)
+# 生成した TeX ソースから生成する PDF
+GENPDFS = $(PLATEXPDFS) $(UPLATEXPDFS)
 
 clean:
 	$(RM) *~
-	$(LLMK) --clean $(TEXS)
+	$(LLMK) --clean $(LUALATEXPDFS:.pdf=.tex)
+	for filename in $(GENPDFS:.pdf=.tex);\
+	  do \
+	    if [ -e "$$filename" ]; then \
+	      $(LLMK) --clean "$$filename"; \
+	    fi; \
+	  done
 
 dist-clean: clean
-	$(LLMK) --clobber $(TEXS)
-	$(RM) $(PLATEXPDFS:.pdf=.tex) $(UPLATEXPDFS:.pdf=.tex)
+	$(LLMK) --clobber $(LUALATEXPDFS:.pdf=.tex)
+	for filename in $(GENPDFS:.pdf=.tex);\
+	  do \
+	    if [ -e "$$filename" ]; then \
+	      $(LLMK) --clobber "$$filename"; \
+	    fi; \
+	  done
+	$(RM) $(GENPDFS:.pdf=.tex)
 
 figure-clean:
 	$(RM) $(FIGUREPDFS)
