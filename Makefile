@@ -21,11 +21,18 @@ FIGUREPDFS = invention1.pdf
 # 図をソースファイルから生成したければ事前に `make figure` する
 all: sample debug
 
+# TeX で生成するすべての PDF
+TEXPDFS = $(SAMPLEPDFS) $(DEBUGPDFS)
+
+# TeX ソース
+TEXS = $(TEXPDFS:.pdf=.tex)
+
 clean:
-	$(RM) *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz *~
+	$(RM) *~
+	$(LLMK) --clean $(TEXS)
 
 dist-clean: clean
-	$(RM) $(SAMPLEPDFS) $(DEBUGPDFS)
+	$(LLMK) --clobber $(TEXS)
 
 figure-clean:
 	$(RM) $(FIGUREPDFS)
