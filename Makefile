@@ -63,9 +63,9 @@ debug: $(DEBUGPDFS)
 
 figure: $(FIGUREPDFS)
 
-platex: $(PLATEXPDFS)
+platex: $(PLATEXPDFS) $(PLATEXPDFS:.pdf=.tex)
 
-uplatex: $(UPLATEXPDFS)
+uplatex: $(UPLATEXPDFS) $(UPLATEXPDFS:.pdf=.tex)
 
 # TeX ソースから PDF へコンパイル
 %.pdf: %.tex
