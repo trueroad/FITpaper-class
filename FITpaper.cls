@@ -398,7 +398,7 @@
   \vspace{5bp}
 
   {\jafontsize{10.5bp}{14bp}\selectfont \sffamily
-    \begin{tabular}{\fitpaper@authors}
+    \edef\@tempa{\noexpand\begin{tabular}{\fitpaper@authors}}\@tempa
       \fitpaper@jauthors \\
       \fitpaper@eauthors
     \end{tabular}
@@ -408,7 +408,7 @@
 
     \vspace{5bp}
 
-    \begin{tabular}{\fitpaper@authorstwo}
+    \edef\@tempa{\noexpand\begin{tabular}{\fitpaper@authorstwo}}\@tempa
       \fitpaper@jauthorstwo \\
       \fitpaper@eauthorstwo
     \end{tabular}
