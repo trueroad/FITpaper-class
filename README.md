@@ -1,17 +1,17 @@
 <!-- -*- coding: utf-8 -*- -->
-# FIT2022 向け LaTeX クラスファイル
+# FIT2023 向け LaTeX クラスファイル
 
 [https://github.com/trueroad/FITpaper-class
 ](https://github.com/trueroad/FITpaper-class)
 
-[FIT2022第21回情報科学技術フォーラム
-](https://www.ipsj.or.jp/event/fit/fit2022/)向けに
+[FIT2023第22回情報科学技術フォーラム
+](https://www.ipsj.or.jp/event/fit/fit2023/)向けに
 LaTeXで使えるクラスファイルを作ってみました。
 LuaLaTeX、pLaTeX、upLaTeX に対応しています。
 基本的には[サイトに記載のある紙サイズ、ページ設定（マージン等）
-](https://www.ipsj.or.jp/event/fit/fit2022/paper_require.html#hdg1)や、
+](https://www.ipsj.or.jp/event/fit/fit2023/paper_require.html#hdg1)や、
 [サイトに掲載されている原稿見本のサンプルファイル
-](https://www.ipsj.or.jp/event/fit/fit2022/paper_require.html#hdg2)
+](https://www.ipsj.or.jp/event/fit/fit2023/paper_require.html#hdg2)
 FITpaper.docx に
 設定されているフォントサイズ、行送り、アキ等と
 同様なものを指定しているつもりです。
@@ -116,6 +116,17 @@ llmk を使う場合はさらに
 
 ## 履歴
 
+* 2023-05-10
+    + FIT2023 向けに更新
+        - フォーマットは変更されていないようです。
+            - テンプレートファイル FITpaper.dotx
+              サンプルファイル FITpaper.docx ともに FIT2022 とバイナリ一致。
+              （FIT2022/FIT2023 ともに FIT2021 の同じ
+              URL へのリンクになっています。）
+    + TeX Live 2023 では[
+nidanfloat がエラーを起こす
+](https://github.com/texjporg/nidanfloat/issues/5)
+      ようなので、サンプルで代わりに flushend を使うように変更。
 * 2022-05-12
     + [array パッケージ](https://www.ctan.org/pkg/array)
       を使うとエラーになってしまっていたのを修正
@@ -167,7 +178,7 @@ llmk を使う場合はさらに
 
 ## License
 
-Copyright (C) 2018, 2019, 2022 Masamichi Hosoda. All rights reserved.
+Copyright (C) 2018, 2019, 2022, 2023 Masamichi Hosoda. All rights reserved.
 
 License: BSD-2-Clause
 
