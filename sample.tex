@@ -20,7 +20,8 @@
 \usepackage{graphicx}
 
 % 最終ページで両カラムの下端を揃える
-\usepackage[balance]{nidanfloat}
+%\usepackage[balance]{nidanfloat}
+\usepackage{flushend}
 
 % 和文タイトル
 \jtitle{FIT2022向け\LaTeX クラスファイルのサンプル}
@@ -233,7 +234,9 @@ unicode-mathパッケージを読み込むと、
 揃える方法はいくつかあるようですが、
 本サンプルではjlreq.clsのドキュメントに記載されている方法、
 つまりプリアンブルでnidanfloatパッケージをbalanceオプション付きで
-読み込むことで実現しています。
+読み込むことで実現していました。
+しかし\TeX~Live 2023初版ではエラー\cite{nidanfloat-issue}になるため
+flushendパッケージに変更しています。
 もう一つのサンプルであるsample2.texや、
 デバッグ用テストソースdebug.texではこの処理をしていないため、
 これらをコンパイルしたsample2.pdfやdebug.pdfは
@@ -289,6 +292,9 @@ FITの原稿本文で脚注を使いたくなることは少ないと思いま�
 \bibitem{lilypond}
   楽譜作成プログラムLilyPond. \\
   http://lilypond.org
+\bibitem{nidanfloat-issue}
+  \LaTeX2e~2022-06-01以降でnidanfloatがエラー. \\
+  https://github.com/texjporg/nidanfloat/issues/5
 
 \end{thebibliography}
 
