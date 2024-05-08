@@ -1,9 +1,9 @@
 % -*- coding: utf-8; mode: latex; -*-
 %
-% FIT2023 向け LaTeX クラスファイル
+% FIT2024 向け LaTeX クラスファイル
 % https://github.com/trueroad/FITpaper-class
 %
-% Copyright (C) 2018, 2019, 2022, 2023 Masamichi Hosoda.
+% Copyright (C) 2018, 2019, 2022-2024 Masamichi Hosoda.
 % All rights reserved.
 %
 % Redistribution and use in source and binary forms, with or without
@@ -32,7 +32,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{FITpaper}[2023/05/10 FIT2023 paper class]
+\ProvidesClass{FITpaper}[2024/05/08 FIT2024 paper class]
 
 %%
 %% エンジン判定
@@ -70,9 +70,9 @@
 %%
 
 %
-% FIT2023
+% FIT2024
 % Web 記載のページ設定
-% https://www.ipsj.or.jp/event/fit/fit2023/paper_require.html
+% https://www.ipsj.or.jp/event/fit/fit2024/paper_require.html
 %
 % 用紙サイズ
 %   A4 (210 mm x 297 mm)
@@ -83,7 +83,7 @@
 %
 
 %
-% FIT2023 サンプルファイル FITpaper.docx 設定より
+% FIT2024 サンプルファイル FITpaper.docx 設定より
 %
 % 本文フォントサイズ
 %   9 ポイント = 9 bp
