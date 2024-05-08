@@ -1,17 +1,17 @@
 <!-- -*- coding: utf-8 -*- -->
-# FIT2023 向け LaTeX クラスファイル
+# FIT2024 向け LaTeX クラスファイル
 
 [https://github.com/trueroad/FITpaper-class
 ](https://github.com/trueroad/FITpaper-class)
 
-[FIT2023第22回情報科学技術フォーラム
-](https://www.ipsj.or.jp/event/fit/fit2023/)向けに
+[FIT2024第23回情報科学技術フォーラム
+](https://www.ipsj.or.jp/event/fit/fit2024/)向けに
 LaTeXで使えるクラスファイルを作ってみました。
 LuaLaTeX、pLaTeX、upLaTeX に対応しています。
 基本的には[サイトに記載のある紙サイズ、ページ設定（マージン等）
-](https://www.ipsj.or.jp/event/fit/fit2023/paper_require.html#hdg1)や、
+](https://www.ipsj.or.jp/event/fit/fit2024/paper_require.html#hdg1)や、
 [サイトに掲載されている原稿見本のサンプルファイル
-](https://www.ipsj.or.jp/event/fit/fit2023/paper_require.html#hdg2)
+](https://www.ipsj.or.jp/event/fit/fit2024/paper_require.html#hdg2)
 FITpaper.docx に
 設定されているフォントサイズ、行送り、アキ等と
 同様なものを指定しているつもりです。
@@ -116,6 +116,13 @@ llmk を使う場合はさらに
 
 ## 履歴
 
+* 2024-05-08
+    + FIT2024 向けに更新
+        - フォーマットは変更されていないようです。
+            - テンプレートファイル FITpaper.dotx
+              サンプルファイル FITpaper.docx ともに FIT2023 とバイナリ一致。
+              （FIT2022 以降すべて FIT2021 の同じ
+              URL へのリンクになっています。）
 * 2023-05-10
     + FIT2023 向けに更新
         - フォーマットは変更されていないようです。
@@ -178,7 +185,7 @@ nidanfloat がエラーを起こす
 
 ## License
 
-Copyright (C) 2018, 2019, 2022, 2023 Masamichi Hosoda. All rights reserved.
+Copyright (C) 2018, 2019, 2022-2024 Masamichi Hosoda. All rights reserved.
 
 License: BSD-2-Clause
 
